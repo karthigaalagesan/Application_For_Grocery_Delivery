@@ -1,0 +1,249 @@
+
+<div class="container-1">
+    <div class="navigation"[class.active]="check">
+        <ul>
+            <li [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-brands fa-apple"></i></span>
+                    <span class="title-1">Brand Name</span>
+
+                </a>
+            </li>
+            <li [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title-1">Dashbord</span>
+
+                </a>
+            </li>
+            <li  [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-people-roof"></i></span>
+                    <span class="title-1">Customers</span>
+
+                </a>
+            </li>
+            <li  [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-regular fa-message"></i></span>
+                    <span class="title-1">Messages</span>
+
+                </a>
+            </li>
+            <li  [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-handshake-angle"></i></span>
+                    <span class="title-1">Help</span>
+
+                </a>
+            </li>
+            <li  [routerLinkActive]="'active'">
+                <a [routerLinkActive]="'active'" href="#">
+                    <span class="icon"><i class="fa-solid fa-gear"></i></span>
+                    <span class="title-1">Settings</span>
+
+                </a>
+            </li>
+            <li  routerLinkActive="'active'">
+                <a [routerLink]="">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <span class="title-1">Password</span>
+
+                </a>
+            </li>
+            <li  [routerLinkActive]="'active'">
+                <a href="#">
+                    <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                    <span class="title-1">Sign out</span>
+
+                </a>
+            </li>
+           
+        </ul>
+        
+    </div>
+
+    <div class="main"[class.active]="sidebar">
+        <div class=" is-flex is-justify-content-space-between topbar">
+            <div class="toggle">
+                <i class="fa-solid fa-bars"(click)="onClick()"></i>
+
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    
+                </label>
+
+            </div>
+            <div class="user">
+            <img src="../../../assets/men-1.webp" alt="">
+            </div>
+        </div>
+        <div class="cardbox">
+            <div class="card-1">
+                <div>
+                    <div class="numbers">1,504</div>
+                    <div class="cardname">Daily Views</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <div class="numbers">80</div>
+                    <div class="cardname">Sales</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <div class="numbers">284</div>
+                    <div class="cardname">Comments</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa-brands fa-rocketchat"></i>
+                </div>
+            </div>
+            <div class="card-1">
+                <div>
+                    <div class="numbers">$7842</div>
+                    <div class="cardname">Earning</div>
+                </div>
+                <div class="iconBx">
+                    <i class="fa-solid fa-money-check-dollar"></i>
+                </div>
+            </div>
+            
+
+        
+        </div>
+        <!-- ==================Order Details=============== -->
+
+        <div class="details">
+        <div class="recentOrders">
+            <div class="cardHeader">
+                <h2>Recent Orders</h2>
+                <a href="#" class="btn-1">View All</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Payment</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>$1200</td>
+                        <td>paid</td>
+                        <td><span class="Status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dell Laptop</td>
+                        <td>$110</td>
+                        <td>Due</td>
+                        <td><span class="Status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Apple Watch</td>
+                        <td>$1200</td>
+                        <td>paid</td>
+                        <td><span class="Status return">Return</span></td>
+                    </tr>
+                    <tr>
+                        <td>Addidad Shoes</td>
+                        <td>$620</td>
+                        <td>Due</td>
+                        <td><span class="Status inProgress">In progress</span></td>
+                    </tr>
+                    <tr>
+                        <td>Star Refrigerator</td>
+                        <td>$1200</td>
+                        <td>paid</td>
+                        <td><span class="Status delivered">Delivered</span></td>
+                    </tr>
+                    <tr>
+                        <td>Dell Laptop</td>
+                        <td>$110</td>
+                        <td>Due</td>
+                        <td><span class="Status pending">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>Apple Watch</td>
+                        <td>$1200</td>
+                        <td>paid</td>
+                        <td><span class="Status return">Return</span></td>
+                    </tr>
+                    <tr>
+                        <td>Addidad Shoes</td>
+                        <td>$620</td>
+                        <td>Due</td>
+                        <td><span class="Status inProgress">In progress</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- ======================RecentCustomers=============== -->
+        <div class="recentCustomers">
+            <div class="cardHeader">
+                <h2>Recent Customers</h2>
+               
+            </div>
+            <table>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+                <tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr><tr>
+                    <td [width]="100">
+                    <div class="imgBx"><img src="../../../assets/men-1.webp"></div>
+                    </td>
+                    <td><h4>David<br><span>Italy</span></h4></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+        </div>
+    </div>
+</div>

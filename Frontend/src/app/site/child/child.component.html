@@ -1,0 +1,40 @@
+
+<table class="table ">
+    <thead>
+        <tr>
+            <!-- <th>S.No</th> -->
+            <th>
+                <input type="text" placeholder="Filter by Id" [(ngModel)]="idFilter" (change)="table_filter()">
+               
+                ID
+            </th>
+            <th>
+                <input type="text" placeholder="Filter by title" [(ngModel)]="titleFilter" (change)="table_filter()">
+                Title</th>
+            <th>
+                <input type="text" placeholder="Filter by description" [(ngModel)]="descriptionFilter" (change)="table_filter()">
+                description
+            </th>
+            <th>
+                <input type="text" placeholder="Filter by price" [(ngModel)]="priceFilter" (change)="table_filter()" >
+                Price
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of this.filterData; let i=index" >
+            <!-- <td>{{i+1}}</td> -->
+            <td>{{data?.id}}</td>
+            <td>{{data?.title}}</td>
+             <td>{{data?.description}}</td>
+             <td>{{data?.price}}</td>
+             
+
+        </tr>
+
+    </tbody>
+    
+</table>
+
+

@@ -1,0 +1,73 @@
+
+<div class="is-flex has-text-right"></div>
+<div class="btn btn-info" (click)="openForm()">Add</div>
+<div class="forms">
+
+    <form [formGroup]="myForm" class="is-flex is-justify-content-center flex-column" (ngSubmit)="onSubmit()">
+
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" id="name">
+        <div class="errors">
+       
+        </div>
+        <label for="password">Email</label>
+        <input type="text" formControlName="email" id="name">
+        <div class="errors">
+        
+        </div>
+        <button class="has-background-danger" type="submit">Submit</button>
+    </form>
+</div>
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Name
+                <input type="text" placeholder="Filter by class" [(ngModel)]="nameFilter" (change)="table_filter()">
+            </th>
+            <th>Email
+                <input type="text" placeholder="Filter by class" [(ngModel)]="emailFilter" (change)="table_filter()">
+            </th>
+        </tr>
+    </thead>
+
+   
+    <tbody>
+        <tr *ngFor="let data of tableData">
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  <ng-template #createform let-c="close" let-d="dismiss">
+
+    <div class="modal-body">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"
+                class="ft-popup-heading text-center brand-text-color">Add Form</h5>
+            <button type="button" class="btn-close" aria-label="Close"
+                (click)="btnClose()"></button>
+        </div>
+        <div class="forms">
+
+            <form [formGroup]="myForm" class="is-flex is-justify-content-center flex-column" (ngSubmit)="onSubmit()">
+        
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" id="name">
+                <div class="errors">
+               
+                </div>
+                <label for="password">Password</label>
+                <input type="text" formControlName="password" id="name">
+                <div class="errors">
+                
+                </div>
+                <button class="has-background-danger" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+  </ng-template>
+

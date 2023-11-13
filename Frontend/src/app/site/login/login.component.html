@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4  justify-content-center align-items-center bg-dark text-white p-5" >
+            <h4>Custom Valdiation</h4>
+            <form [formGroup]=" loginForm">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter Email">
+                <div class="text-danger" *ngIf="formControls['email']?.errors && (formControls['email']?.touched || isSubmitted)">
+                    <div *ngIf="formControls['email']?.errors.required">
+                        Email is required
+                    </div>
+                    <div *ngIf="formControls['email']?.errors.email">
+                        Email is invalid
+                    </div>
+                </div>
+                <!-- <span *ngIf="vemail&& vemail.invalid && vemail.touched" class="text-danger">Enter valid Email</span><br> -->
+                
+                <label class="form-label">Password</label>
+                <input type="email" class="form-control" formControlName="password" placeholder="Enter Password">
+                <!-- <span *ngIf="vpwd&& vpwd.invalid && vpwd.touched" class="text-danger">Enter valid password</span><br> -->
+                <div class="text-danger" *ngIf="formControls['password']?.errors && (formControls['password']?.touched || isSubmitted)">
+                    <div *ngIf="formControls['password']?.errors.required">
+                        Password is required
+                    </div>
+                    <div *ngIf="formControls['password']?.errors.password">
+                        Password is invalid
+                    </div>
+                </div>
+                <label class="form-label">Confirm Password</label>
+                <input type="email" class="form-control" formControlName="confirmpassword" placeholder="Enter Confirm Password">
+                <!-- <span *ngIf="vcpwd&& vcpwd.invalid && vcpwd.touched" class="text-danger">Enter valid password</span><br> -->
+                
+                <label class="form-label">Zip Code</label>
+                <input type="email" class="form-control" formControlName="zip" placeholder="Enter Zip Code">
+                <!-- <span *ngIf="vzip&& vzip.invalid && vzip.touched" class="text-danger">Enter valid password</span><br> -->
+                <button class="btn btn-primary" type="submit" (click)="onSubmit()">Submit</button>
+            </form> 
+        </div>
+    </div>
+</div>
+

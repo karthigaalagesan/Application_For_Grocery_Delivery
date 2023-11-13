@@ -1,0 +1,41 @@
+
+<ng-template #contain let-modal>
+<div class="modal-header">
+    <h4 class="modal-title">Modal Title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+ 
+    <div class="modal-body">
+        <form  class="is-flex is-justify-content-center flex-colum">
+    
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" id="name">
+            <div class="errors">
+           
+            </div>
+            <label for="password">Email</label>
+            <input type="text" formControlName="email" id="name">
+            <div class="errors">
+            
+            </div>
+            <button class="has-background-danger" type="submit">Submit</button>
+        </form>
+    
+    
+    
+        
+        <!-- Your modal content goes here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+        <button type="button" class="btn btn-primary" >Save Changes</button>
+      </div>
+    
+
+  </ng-template>
+ 
+
+  <button (click)="openModal(contain)">Open Modal</button>
+  

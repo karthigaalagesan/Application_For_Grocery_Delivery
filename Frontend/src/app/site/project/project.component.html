@@ -1,0 +1,127 @@
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <div class="card-header ">
+                <div class="card-header-title is-flex is-justify-content-end ">
+                  
+                    <div class="button is-primary" (click)="openForm()">
+                        <span *ngIf="modal " >Ad</span>
+                        <span *ngIf="!modal ">close</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form" *ngIf="!modal ">
+                <form [formGroup]="userForm" class="form" (ngSubmit)="onSubmit()">
+                    <label class="label-1" for="id">Id</label>
+                    <input class="input is-danger" type="text" name="id" formControlName="id" >
+                    <div class="text-danger" *ngIf="formControls['id']?.errors && (formControls['id']?.touched)">
+                        <div *ngIf="formControls['id']?.errors.required">
+                            ID is required
+                        </div>
+                        
+                    </div>
+                    <label class="label-1" for="name">Title</label>
+                    <input class="input is-danger" type="text" name="name" formControlName="title" >
+                    <label class="label-1" for="code">Price</label>
+                    <input class="input is-danger" type="text" name="code" formControlName="price" >
+                    <label class="label-1" for="revenue">Description</label>
+                    <input class="input is-danger" type="text" name="revenue" formControlName="description" >
+            <div class="is-flex is-justify-content-space-around">
+                    <button class="button is-info mt-3 is-fullwidth" type="submit">Submit</button>
+                    <div class="has-text-danger mt-3 is-size-4 mx-3">
+                    <i class="fa-solid fa-x " (click)="closeForm()"></i>
+                    </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="card-content" *ngIf="modal">
+
+                  <input type="text" [(ngModel)]="startCode">
+                    <input type="text" [(ngModel)]="endCode">
+                 <button (click)="RangeFilter()">Apply Filter</button>
+
+                 <div class="show-entries">
+                    Show Entries:
+                    <select [(ngModel)]="itemsPerPage">
+                      <option value="5">5</option>
+                      <option value="10">10</option>
+                      <option value="15">15</option>
+                      <option value="20">20</option>
+                      <option value="30">30</option>
+                     
+                    </select>
+                  </div>
+            <table class="table is-selected">
+                <thead>
+                    <tr>
+                    <th>
+                        ID
+                        <input type="text" placeholder="Filter by ID" [(ngModel)]="idFilter" (change)="table_filter()">
+                    </th>
+                    <th>
+                        Title
+                        <input type="text" placeholder="Filter by Name" [(ngModel)]="titleFilter" (change)="table_filter()">
+                    </th>
+                    <th>
+                        Price
+                        <input type="text" placeholder="Filter by Area code" [(ngModel)]="priceFilter" (change)="table_filter()">
+                    </th>
+                    <th> 
+                        Description
+                        <input type="text" placeholder="Filter by Revenue" [(ngModel)]="decFilter" (change)="table_filter()">
+                    </th>
+                    <th>
+                        View
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of filterData">
+                        <!-- <td>{{data?.id}}</td> -->
+                        <td>{{data?.title}}</td>
+                        <td>{{data?.price}}</td>
+                        <td>{{data?.description}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="view(data)">View</button>
+                           
+                        </td>
+                    </tr>
+                    
+
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+                <span>Page {{ currentPage }}</span>
+                <button (click)="nextPage()" [disabled]="currentPage === totalPages()">Next</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<ng-template #createform>
+
+    <!-- <app-login></app-login> -->
+
+     <div class="modal-body">
+        <div class="modal-header"></div>
+        <button (click)="clickClose()">Close</button>
+        <h4>View </h4>
+        <ul >
+            <li>ID{{singleRowData?.id}}</li>
+            <li>Name{{singleRowData?.name}}</li>
+            <li>Area Code {{singleRowData?.code}}</li>
+            <li>Revenue {{singleRowData?.revenue}}</li>
+        </ul> 
+    </div>
+    
+
+
+</ng-template>
+
